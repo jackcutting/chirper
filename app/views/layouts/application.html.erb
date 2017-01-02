@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Chirper</title>
+    <%= csrf_meta_tags %>
+
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+  </head>
+
+  <body>
+
+    <%= render 'layouts/header' %>
+
+    <div class="container">
+      <div class="row">
+        <div class="col-xs-6 push-xs-3">
+
+            <%= yield %>
+
+        </div>
+      </div>
+    </div><!-- /.container -->
+
+    <%= render 'layouts/footer' %>
+
+  </body>
+</html>

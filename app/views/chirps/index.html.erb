@@ -1,0 +1,36 @@
+<%= form_for :chirp, url: chirps_path do |f| %>
+
+  <% if @chirp.errors.any? %>
+    <div id="error_explanation">
+      <h2>
+        <%= pluralize(@chirp.errors.count, "error") %> prohibited
+        this chirp from being saved:
+      </h2>
+      <ul>
+        <% @chirp.errors.full_messages.each do |msg| %>
+          <li><%= msg %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+ 
+  <div class="form-group">
+    <%= f.text_area( :body, :class => "form-control chirp-body", :rows => 3 ) %>
+  </div>
+
+  <%= f.submit "Chirp", :class => "btn btn-primary" %>
+  <span class="chirp-body-count"></span>
+<% end %>
+
+<hr>
+
+<% @chirps.each do |chirp| %>
+<div class="card card-block">
+  <p class="card-text"><%= chirp.body %></p>
+  <%= link_to 'View', chirp_path(chirp), { :class=>"card-link" } %>
+  <%= link_to 'Destroy', chirp_path(chirp),
+              method: :delete,
+              data: { confirm: 'Are you sure?' },
+              class: "card-link" %>
+</div>
+<% end %>
