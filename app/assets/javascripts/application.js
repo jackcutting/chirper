@@ -13,10 +13,11 @@
 //= require jquery
 //= require jquery_ujs
 //= require turbolinks
-//= require bootstrap-sprockets
 //= require_tree .
+//= require bootstrap-sprockets
 
 jQuery(document).ready(function($){
+
 	var maxChars = 150,
 		bodyEle = $('.chirp-body'),
 		countEle = $('.chirp-body-count');

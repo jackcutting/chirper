@@ -2,12 +2,12 @@ class ChirpsController < ApplicationController
 
 	def index
 		@chirp = Chirp.new
-		@chirps = Chirp.all
+		@chirps = Chirp.all.order(created_at: :desc)
 	end
 
 	def create
 		# render plain: params[:chirp].inspect
-		@chirps = Chirp.all
+		@chirps = Chirp.all.order(created_at: :desc)
 
 		@chirp = Chirp.new(chirp_params)
 

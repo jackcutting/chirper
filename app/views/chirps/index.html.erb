@@ -27,6 +27,7 @@
 <% @chirps.each do |chirp| %>
 <div class="card card-block">
   <p class="card-text"><%= chirp.body %></p>
+  <p class="small" prettydate><%= chirp.created_at %></p>
   <%= link_to 'View', chirp_path(chirp), { :class=>"card-link" } %>
   <%= link_to 'Destroy', chirp_path(chirp),
               method: :delete,
