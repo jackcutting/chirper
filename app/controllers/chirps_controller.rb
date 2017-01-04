@@ -1,38 +1,37 @@
+# Controller for Chirps (like posts)
 class ChirpsController < ApplicationController
+  def index
+    @chirp = Chirp.new
+    @chirps = Chirp.all.order(created_at: :desc)
+  end
 
-	def index
-		@chirp = Chirp.new
-		@chirps = Chirp.all.order(created_at: :desc)
-	end
+  def create
+    # render plain: params[:chirp].inspect
+    @chirps = Chirp.all.order(created_at: :desc)
 
-	def create
-		# render plain: params[:chirp].inspect
-		@chirps = Chirp.all.order(created_at: :desc)
+    @chirp = Chirp.new(chirp_params)
 
-		@chirp = Chirp.new(chirp_params)
+    if @chirp.save
+      redirect_to root_path
+    else
+      render 'index'
+    end
+  end
 
-		if @chirp.save
-			redirect_to root_path
-		else
-			render 'index'
-		end
+  def show
+    @chirp = Chirp.find(params[:id])
+  end
 
-	end
+  def destroy
+    @chirp = Chirp.find(params[:id])
+    @chirp.destroy
 
-	def show
-	    @chirp = Chirp.find(params[:id])
-	end
+    redirect_to root_path
+  end
 
-	def destroy
-		@chirp = Chirp.find(params[:id])
-		@chirp.destroy
+  private
 
-		redirect_to root_path
-	end
-
-	private
-		def chirp_params
-			params.require(:chirp).permit(:body)
-		end
-
+  def chirp_params
+    params.require(:chirp).permit(:body)
+  end
 end
