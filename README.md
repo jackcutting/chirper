@@ -43,7 +43,13 @@ This application was built using the very latest version of Ruby and Ruby on Rai
 ## Running Tests
 
 Unit and Feature testing has been implemented with RSpec and Capybara. These can be run easily using the following command: 
-        rspec
+
+  ```
+  rspec
+  ```
 
 Syntax testing can also be run via Rubocop by running the following command:
-        rubocop
+
+  ```
+  rubocop
+  ```
