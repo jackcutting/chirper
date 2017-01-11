@@ -1,5 +1,5 @@
 # Chirper
-You know, like the blue bird website...
+*You know, like the blue bird website...*
 
 ## Getting Started
 
