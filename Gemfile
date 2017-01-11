@@ -27,6 +27,8 @@ gem 'sprockets-rails', require: 'sprockets/railtie'
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
 
+gem 'bdd-rails', path: '../../'
+
 group :development, :test do
   gem 'byebug', platform: :mri
 end
@@ -39,3 +41,15 @@ group :development do
 end
 
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
+
+group :test do
+  gem 'capybara'
+  gem 'database_cleaner'
+  gem 'factory_girl'
+  gem 'ffaker'
+  gem 'rspec-its'
+  gem 'rspec-rails'
+  gem 'vcr'
+  gem 'webmock'
+  gem 'shoulda-matchers', '~> 3.1'
+end
