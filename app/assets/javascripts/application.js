@@ -18,26 +18,26 @@
 
 jQuery(document).ready(function($){
 
-	var maxChars = 150,
-		bodyEle = $('.chirp-body'),
-		countEle = $('.chirp-body-count');
+  var maxChars = 150,
+    bodyEle = $('.chirp-body'),
+    countEle = $('.chirp-body-count');
 
-	bodyEle.on('keydown keyup change blur focus', function(){
-		var charCount = $(this).val().length,
-			charRemaining = maxChars - charCount,
-			countEleClass = 'success';
+  bodyEle.on('keydown keyup change blur focus', function(){
+    var charCount = $(this).val().length,
+      charRemaining = maxChars - charCount,
+      countEleClass = 'success';
 
-		if ( charRemaining > 10 ) {
-			countEleClass = 'success';
-		} else if ( charRemaining <= 10 && charRemaining >= 0 ) {
-			countEleClass = 'warning';
-		} else if ( charRemaining < 0 ) {
-			countEleClass = 'danger';
-		}
+    if ( charRemaining > 10 ) {
+      countEleClass = 'success';
+    } else if ( charRemaining <= 10 && charRemaining >= 0 ) {
+      countEleClass = 'warning';
+    } else if ( charRemaining < 0 ) {
+      countEleClass = 'danger';
+    }
 
-		var countEleHtml = '<span class="tag tag-' + countEleClass + '">' + charRemaining + '</span>';
+    var countEleHtml = '<span class="tag tag-' + countEleClass + '">' + charRemaining + '</span>';
 
-		countEle.html( countEleHtml );
-	});
+    countEle.html( countEleHtml );
+  });
 
 });
