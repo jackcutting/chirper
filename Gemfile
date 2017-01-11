@@ -49,7 +49,7 @@ group :test do
   gem 'ffaker'
   gem 'rspec-its'
   gem 'rspec-rails'
+  gem 'shoulda-matchers', '~> 3.1'
   gem 'vcr'
   gem 'webmock'
-  gem 'shoulda-matchers', '~> 3.1'
 end

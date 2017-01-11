@@ -59,7 +59,7 @@ describe Chirp do
     end
     click_button 'Chirp'
 
-    expect(page).to have_content 
-      'Who says you can\'t do whiteboard sessions with #remote colleagues.'
+    expect(page).to have_content
+    'Who says you can\'t do whiteboard sessions with #remote colleagues.'
   end
 end
