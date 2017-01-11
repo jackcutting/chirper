@@ -11,21 +11,21 @@ This application was built using the very latest version of Ruby and Ruby on Rai
 1. Get Chirper code
 
   ```
-    git clone https://jackcutting.github.com/chirper.git
+  git clone https://jackcutting.github.com/chirper.git
   ```
 
 2. Get gems
 
   ```
-    bundle install
+  bundle install
   ```
 
 3. Init the database
 
   ```
-    rake db:create
-    rake db:migrate
-    rake db:seed
+  rake db:create
+  rake db:migrate
+  rake db:seed
   ```
 
 4. Run the server
