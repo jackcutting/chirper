@@ -13,5 +13,9 @@
 @import "bootstrap";
 
 body {
-	padding-top: 5rem;
+  padding-top: 5rem;
+}
+
+form + .alert {
+  margin-top: 1rem;
 }
