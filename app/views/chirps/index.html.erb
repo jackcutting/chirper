@@ -1,16 +1,16 @@
+<div id="chirpForm">
 <%= form_for :chirp, url: chirps_path do |f| %>
 
   <% if @chirp.errors.any? %>
     <div id="error_explanation">
-      <h2>
-        <%= pluralize(@chirp.errors.count, "error") %> prohibited
-        this chirp from being saved:
-      </h2>
-      <ul>
-        <% @chirp.errors.full_messages.each do |msg| %>
-          <li><%= msg %></li>
-        <% end %>
-      </ul>
+      <% @chirp.errors.full_messages.each do |msg| %>
+        <div class="alert alert-danger alert-dismissible fade in" role="alert">
+          <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+          <%= msg %>
+        </div>
+      <% end %>
     </div>
   <% end %>
  
@@ -21,12 +21,23 @@
   <%= f.submit "Chirp", :class => "btn btn-primary" %>
   <span class="chirp-body-count"></span>
 <% end %>
+</div>
+
+
+<% if flash[:message] %>
+<div class="alert alert-<%= flash[:alert] %> alert-dismissible fade in" role="alert">
+  <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+    <span aria-hidden="true">&times;</span>
+  </button>
+  <%= flash[:message] %>
+</div>
+<% end %>
 
 <hr>
 
 <% @chirps.each do |chirp| %>
 <div class="card card-block">
-  <p class="card-text"><%= chirp.body %></p>
+  <%= simple_format(chirp.body, class: 'card-text') %>
   <p class="small" prettydate><%= chirp.created_at %></p>
   <%= link_to 'View', chirp_path(chirp), { :class=>"card-link" } %>
   <%= link_to 'Destroy', chirp_path(chirp),
