@@ -12,6 +12,9 @@ class ChirpsController < ApplicationController
     @chirp = Chirp.new(chirp_params)
 
     if @chirp.save
+      flash[:alert] = 'success'
+      flash[:message] = 'Chirp added to timeline!'
+
       redirect_to root_path
     else
       render 'index'
@@ -25,6 +28,9 @@ class ChirpsController < ApplicationController
   def destroy
     @chirp = Chirp.find(params[:id])
     @chirp.destroy
+
+    flash[:alert] = 'warning'
+    flash[:message] = 'Chirp removed from timeline!'
 
     redirect_to root_path
   end
