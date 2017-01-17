@@ -13,7 +13,7 @@
 # It's strongly recommended that you check this
 # file into your version control system.
 
-ActiveRecord::Schema.define(version: 201_701_022_021_30) do
+ActiveRecord::Schema.define(version: 20_170_102_202_130) do
   create_table 'chirps', force: :cascade do |t|
     t.text     'body'
     t.datetime 'created_at', null: false
