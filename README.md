@@ -1,6 +1,10 @@
 # Chirper
 *You know, like the blue bird website...*
 
+## Example
+
+To view an example of the application, simply go to: [https://chirper-dev.herokuapp.com/](https://chirper-dev.herokuapp.com/)
+
 ## Getting Started
 
 This application was built using the very latest version of Ruby and Ruby on Rails at the time. These are as follows: 
