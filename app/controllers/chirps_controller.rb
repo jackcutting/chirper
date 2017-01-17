@@ -6,7 +6,6 @@ class ChirpsController < ApplicationController
   end
 
   def create
-    # render plain: params[:chirp].inspect
     @chirps = Chirp.all.order(created_at: :desc)
 
     @chirp = Chirp.new(chirp_params)
