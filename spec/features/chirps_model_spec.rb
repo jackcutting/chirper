@@ -1,6 +1,5 @@
 require 'spec_helper'
 require 'factory_girl'
-require 'ffaker'
 
 describe Chirp, type: :model do
   it 'has a valid factory' do
