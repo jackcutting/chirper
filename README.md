@@ -11,7 +11,7 @@ This application was built using the very latest version of Ruby and Ruby on Rai
 1. Get Chirper code
 
   ```
-  git clone https://jackcutting.github.com/chirper.git
+  git clone git@github.com:jackcutting/chirper.git
   ```
 
 2. Get gems
