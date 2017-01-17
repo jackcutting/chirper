@@ -16,7 +16,6 @@
 ActiveRecord::Schema.define(version: 201_701_022_021_30) do
   create_table 'chirps', force: :cascade do |t|
     t.text     'body'
-    t.string   'author'
     t.datetime 'created_at', null: false
     t.datetime 'updated_at', null: false
   end
